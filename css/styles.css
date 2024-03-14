@@ -1,0 +1,508 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "ALTAS", sans-serif; /* Default font family */
+}
+/* Specify the ALTAS font family */
+body {
+  font-family: "ALTAS", sans-serif;
+}
+
+/* Apply ALTAS font to specific elements */
+.heading-line-content h1,
+.about h1,
+.about .content h3,
+.about .content p,
+.sarthak h2,
+.contact .heading {
+  font-family: "ALTAS", sans-serif;
+}
+#about1 h1,
+.contact .heading {
+  font-size: 3.5rem; /* Adjust the size as needed */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%; /* Adjusted padding */
+  background-color: #00040F;
+}
+
+.logo img {
+  width: 150px; /* Adjust logo size */
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  margin-right: 20px; /* Adjust spacing between nav links */
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  color: #edf0f1;
+  text-decoration: none;
+  font-size: 18px; /* Adjust font size */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav__links a:hover {
+  color: rgb(172, 172, 170);
+}
+
+.cta {
+  padding: 10px 20px; /* Adjust button padding */
+  background-color: rgba(0, 136, 169, 1);
+  border-radius: 30px; /* Adjust button border radius */
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+/* .get-started-button{
+  color: white;
+  border: 4px solid black;
+  border-radius: 10px;
+
+}
+.get-started-button:hover{
+  color: rgb(1, 1, 54);
+  border: 6px solid black;
+  border-radius: 10px;
+} */
+
+.get-started-button {
+  background-color: #007bff; /* Set background color */
+  color: white; /* Set text color */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Add border radius */
+  padding: 15px 30px; /* Add padding */
+  font-size: 18px; /* Set font size */
+  cursor: pointer; /* Add cursor pointer */
+  transition: background-color 0.3s, border-width 0.3s, color 0.3s; /* Add transition effect */
+}
+
+.get-started-button:hover {
+  background-color: #011327; /* Darken background color on hover */
+  border-width: 6px; /* Increase border width on hover */
+}
+
+
+/* sliders sections */
+
+
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.heading-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ensure the heading appears on top of the sliders */
+  text-align: center;
+  color: azure;
+  font-weight: bolder;
+  font-size: 40px; /* Adjust heading font size */
+  line-height: 1.5;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure the sliders appear behind the heading */
+  overflow: hidden;
+}
+
+.slider .list {
+  position: absolute;
+  width: max-content;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  transition: 1s;
+}
+
+.slider .list img {
+  width: 100%; /* Set width to 100% to fill the slider container */
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
+
+.slider .buttons {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider .buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff5;
+  color: #fff;
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.slider .dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.slider .dots li {
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.slider .dots li.active {
+  width: 30px;
+}
+
+/* @media screen and (max-width: 768px) {
+  .slider-container {
+    height: 400px;
+  }
+} */
+
+
+
+
+
+/* About section styles */
+/* About section styles */
+.about {
+  min-height: 330px;
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background color */
+  padding: 50px 0; /* Increased padding for better spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(8, 0, 69, 0.1); /* Box shadow for depth */
+}
+
+.about h1 {
+  font-size: 42px; /* Increased font size for heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Darker text color */
+}
+
+.about p {
+  font-size: 20px; /* Increased font size for paragraphs */
+  color: #666; /* Slightly darker text color */
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.about p:last-child {
+  margin-top: 20px; /* Additional margin for better separation */
+}
+
+
+/* Services section styles */
+.service{
+ 
+    min-height: 330px;
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    padding: 50px 0; /* Increased padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+}
+.service p{
+    font-size: 20px; /* Increased font size for paragraphs */
+    color: #666; /* Slightly darker text color */
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+}
+.service h1 {
+  font-size: 42px; /* Increased font size for heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Darker text color */
+}
+
+.cont01 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px; /* Adjust margin */
+}
+
+.sarthak {
+  width: calc(33.33% - 40px); /* Adjust card width */
+  margin: 20px; /* Adjust margin */
+  background-color: #00040F;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.img3 img {
+  width: 90%; /* Ensure image covers entire container */
+  border-radius: 10px; /* Adjust border radius */
+  transition: transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.img3:hover img {
+  transform: scale(1.1); /* Scale up image on hover */
+  cursor: pointer;
+}
+
+.img3 h2 {
+  color: white;
+  font-size: 24px; /* Adjust font size */
+  margin-top: 20px; /* Adjust margin */
+  margin-bottom: 10px;
+}
+.img3 {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s; /* Smooth transition */
+}
+
+.sarthak:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.overlay ul {
+  list-style-type:none;
+  padding: 0;
+}
+
+.overlay ul li {
+  margin-bottom: 10px;
+}
+
+
+/* Contact section styles */
+.contact {
+  text-align: center;
+  margin-top: 50px; /* Adjust margin */
+  
+}
+
+.contact .heading {
+  margin-bottom: 20px; /* Adjust margin */
+  font-size: 36px; /* Adjust font size */
+  font-weight: bold;
+}
+
+.contact-in {
+  width: 80%;
+  max-width: 1200px; /* Adjust max width */
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 18px 15px 20px rgba(6, 0, 21, 0.1);
+}
+
+.contact-map,
+.contact-form {
+  flex: 1;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 400px; /* Adjust map height */
+  border: none;
+}
+
+.contact-form {
+  padding: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: calc(100% - 40px); /* Adjust input width */
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px; /* Adjust font size */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+  font-size: 16px; /* Adjust font size */
+}
+
+.contact-form-btn {
+  width: 200px; /* Adjust button width */
+  padding: 15px;
+  background-color: #00040F;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 18px; /* Adjust font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form-btn:hover {
+  background-color: rgb(10, 1, 65); /* Darker background color on hover */
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+
+
+/* footer */
+
+footer {
+  background-color: #00040F;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-left h2,
+.footer-middle h2,
+.footer-right h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+}
+
+.social-links li {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-logos img {
+  width: 100px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.partner-logos img:hover {
+  transform: scale(1.2);
+}
+
+.copyright {
+  padding: 10px;
+  background-color: black;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.footer-links a:hover{
+  color: blue;
+  font-size: 16px;
+}
+
+
+
+.social-links a {
+  margin-right: 20px; /* Adjust the margin to increase space between icons */
+  font-size: 26px;
+}
+
+.social-links a:hover{
+  font-size: 28px;
+}
