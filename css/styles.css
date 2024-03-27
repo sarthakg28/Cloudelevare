@@ -39,9 +39,15 @@ header {
 }
 
 .logo img {
-  width: 150px; /* Adjust logo size */
-}
+  width: 90px; /* Adjust logo size */
+  border-radius: 20px;
+  padding: 2px;
 
+}
+.logo:hover{
+  background-color: #00040F;
+  transform: scale(1.1); 
+}
 .nav__links {
   list-style: none;
   display: flex;
@@ -87,7 +93,7 @@ header {
 } */
 
 .get-started-button {
-  background-color: #007bff; /* Set background color */
+  background-color: #00040F; /* Set background color */
   color: white; /* Set text color */
   border: none; /* Remove border */
   border-radius: 10px; /* Add border radius */
@@ -95,6 +101,7 @@ header {
   font-size: 18px; /* Set font size */
   cursor: pointer; /* Add cursor pointer */
   transition: background-color 0.3s, border-width 0.3s, color 0.3s; /* Add transition effect */
+  margin-top: 30px;
 }
 
 .get-started-button:hover {
@@ -103,109 +110,60 @@ header {
 }
 
 
-/* sliders sections */
 
+/* Image and header */
 
-
-
-.slider-container {
+.image-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 400px; /* Adjust height as needed */
 }
 
-.heading-line {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2; /* Ensure the heading appears on top of the sliders */
-  text-align: center;
-  color: azure;
-  font-weight: bolder;
-  font-size: 40px; /* Adjust heading font size */
-  line-height: 1.5;
-}
-
-.slider {
-  position: absolute;
-  top: 0;
-  left: 0;
+.image-container img {
   width: 100%;
   height: 100%;
-  z-index: 1; /* Ensure the sliders appear behind the heading */
-  overflow: hidden;
-}
-
-.slider .list {
-  position: absolute;
-  width: max-content;
-  height: 100%;
-  left: 0;
-  top: 0;
-  display: flex;
-  transition: 1s;
-}
-
-.slider .list img {
-  width: 100%; /* Set width to 100% to fill the slider container */
-  height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensure the image covers the container */
   filter: blur(1px);
   -webkit-filter: blur(1px);
 }
 
-.slider .buttons {
-  position: absolute;
-  top: 45%;
-  left: 5%;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-}
 
-.slider .buttons button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #fff5;
-  color: #fff;
-  border: none;
-  font-family: monospace;
-  font-weight: bold;
-}
 
-.slider .dots {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  color: #fff;
+.image-container {
+  position: relative;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+  height: 700px; /* Adjust the height as needed */
+  /* filter: blur(1px);
+  -webkit-filter: blur(1px); */
 }
 
-.slider .dots li {
-  list-style: none;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  margin: 10px;
-  border-radius: 20px;
-  transition: 0.5s;
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-.slider .dots li.active {
-  width: 30px;
+.overlay-text h1 {
+  font-size: 3rem; /* Adjust the font size of the heading */
+  line-height: 80px;
+  font-weight: bolder;
 }
-
-/* @media screen and (max-width: 768px) {
-  .slider-container {
-    height: 400px;
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
   }
-} */
+  to {
+    transform: scale(1.1);
+  }
+}
+.zoom-in {
+  animation: zoomIn 2s ease-in-out forwards;
+}
+
+/* sliders sections */
+
 
 
 
@@ -221,7 +179,7 @@ header {
   background-color: #f9f9f9; /* Light background color */
   padding: 50px 0; /* Increased padding for better spacing */
   border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 0 20px rgba(8, 0, 69, 0.1); /* Box shadow for depth */
+  box-shadow: 0 40px 20px rgba(4, 0, 35, 0.1); /* Box shadow for depth */
 }
 
 .about h1 {
@@ -237,6 +195,7 @@ header {
   line-height: 1.6;
   margin: 0 auto;
   max-width: 800px;
+
 }
 
 .about p:last-child {
@@ -463,10 +422,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; 
 }
 
 .partner-logos img {
-  width: 100px;
+  width: calc(25% - 10px);
+  /* width: 100px; */
   margin-left: 10px;
   transition: transform 0.3s ease;
 }
@@ -505,4 +466,344 @@ footer {
 
 .social-links a:hover{
   font-size: 28px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .slider-container {
+    height: 70vh; /* Adjust slider height */
+  }
+
+  .slider .buttons {
+    top: 40%; /* Adjust button position */
+  }
+
+  /* Adjust About Us section */
+  .about {
+    padding: 30px 0; /* Adjust padding */
+  }
+
+  .about h1 {
+    font-size: 36px; /* Adjust heading font size */
+  }
+
+  .about p {
+    font-size: 18px; /* Adjust paragraph font size */
+  }
+
+  /* Adjust Services section */
+  .service {
+    padding: 30px 0; /* Adjust padding */
+  }
+
+  .service h1 {
+    font-size: 36px; /* Adjust heading font size */
+  }
+
+  .cont01 {
+    margin-top: 10px; /* Adjust margin */
+  }
+
+  .sarthak {
+    width: calc(50% - 20px); /* Adjust card width */
+  }
+
+  /* Adjust Get in Touch section */
+  .contact {
+    margin-top: 50px; /* Adjust margin */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%; /* Adjust input width */
+  }
+
+  .contact-form-btn {
+    width: 100%; /* Adjust button width */
+  }
+}
+
+/* For smaller devices like mobile phones */
+@media screen and (max-width: 768px) {
+  .slider-container {
+    height: 50vh; /* Adjust slider height */
+  }
+
+  .slider .buttons {
+    display: none; /* Hide slider navigation buttons */
+  }
+
+  .nav__links {
+    display: none; /* Hide navigation links */
+  }
+
+  .cta {
+    display: none; /* Hide call to action button */
+  }
+
+  /* Adjust About Us section */
+  .about {
+    padding: 20px 0; /* Adjust padding */
+  }
+
+  .about h1 {
+    font-size: 32px; /* Adjust heading font size */
+  }
+
+  .about p {
+    font-size: 16px; /* Adjust paragraph font size */
+  }
+
+  /* Adjust Services section */
+  .service {
+    padding: 20px 0; /* Adjust padding */
+  }
+
+  .service h1 {
+    font-size: 32px; /* Adjust heading font size */
+  }
+
+  .cont01 {
+    margin-top: 10px; /* Adjust margin */
+  }
+
+  .sarthak {
+    width: calc(100% - 40px); /* Adjust card width */
+  }
+
+  /* Adjust Get in Touch section */
+  .contact {
+    margin-top: 30px; /* Adjust margin */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%; /* Adjust input width */
+  }
+
+  .contact-form-btn {
+    width: 100%; /* Adjust button width */
+  }
+}
+
+/* For tablets and small desktop screens */
+@media screen and (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column; /* Change to a column layout */
+    align-items: center; /* Center align items */
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    width: 100%; /* Make footer sections full width */
+    margin-bottom: 30px; /* Add spacing between sections */
+  }
+
+  .footer-links {
+    text-align: center; /* Center align footer links */
+  }
+
+  .footer-links a {
+    margin: 0 10px; /* Adjust spacing between footer links */
+  }
+}
+
+/* For smaller devices like mobile phones */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 20px; /* Add padding to footer container */
+  }
+
+  .footer-links {
+    flex-direction: column; /* Change to a column layout */
+    align-items: center; /* Center align footer links */
+  }
+
+  .footer-links a {
+    margin: 10px 0; /* Adjust spacing between footer links */
+  }
+}
+
+.cookies-card {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  width: 350px;
+  background-color: #242424;
+  padding: 1.5em;
+}
+
+.cookies-card * {
+  color: #fff;
+}
+
+.title {
+  font-size: 1.6em;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.5em;
+}
+
+.info {
+  line-height: 1.4em;
+  letter-spacing: 0.4px;
+  margin-bottom: 2em;
+}
+
+.cta {
+  border: none;
+  outline: none;
+  padding: 0.8em 1.5em;
+  background-color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.cta:hover {
+  background-color: #3c9e66;
+}
+
+.cookies-card a {
+  text-decoration: none;
+  border-bottom: 1px solid;
+  transition: color 0.4s;
+}
+
+.cookies-card a.settings {
+  color: #bbb;
+  margin-left: 1em;
+  border-bottom: none;
+}
+
+.cookies-card a:hover {
+  color: #3c9e66;
+}
+.cookies-card.hidden {
+  display: none;
+}
+
+
+/* For mobile phones */
+@media screen and (max-width: 480px) {
+  .logo img {
+    width: 70px; /* Adjust logo size for smaller screens */
+    border-radius: 10px; /* Adjust logo border radius */
+  }
+
+  .nav__links li {
+    margin-right: 10px; /* Adjust spacing between nav links */
+  }
+
+  .cta {
+    padding: 8px 16px; /* Adjust button padding */
+    border-radius: 20px; /* Adjust button border radius */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .get-started-button {
+    padding: 12px 24px; /* Adjust button padding */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .about h1 {
+    font-size: 28px; /* Adjust font size */
+  }
+
+  .about p {
+    font-size: 16px; /* Adjust font size */
+    line-height: 1.5;
+  }
+
+  .service h1 {
+    font-size: 28px; /* Adjust font size */
+  }
+
+  .service p {
+    font-size: 16px; /* Adjust font size */
+    line-height: 1.5;
+  }
+
+  .contact .heading {
+    font-size: 28px; /* Adjust font size */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%; /* Adjust input width */
+  }
+
+  .contact-form-btn {
+    width: 100%; /* Adjust button width */
+    font-size: 16px; /* Adjust font size */
+  }
+}
+
+/* For desktop screens */
+@media screen and (min-width: 1025px) {
+  .logo img {
+    width: 100px; /* Adjust logo size for larger screens */
+  }
+
+  .nav__links li {
+    margin-right: 20px; /* Reset spacing between nav links */
+  }
+
+  .cta {
+    padding: 10px 20px; /* Reset button padding */
+    border-radius: 30px; /* Reset button border radius */
+    font-size: 18px; /* Reset font size */
+  }
+
+  .get-started-button {
+    padding: 15px 30px; /* Reset button padding */
+    font-size: 18px; /* Reset font size */
+  }
+
+  .about h1 {
+    font-size: 42px; /* Reset font size */
+  }
+
+  .about p {
+    font-size: 20px; /* Reset font size */
+    line-height: 1.6;
+  }
+
+  .service h1 {
+    font-size: 42px; /* Reset font size */
+  }
+
+  .service p {
+    font-size: 20px; /* Reset font size */
+    line-height: 1.6;
+  }
+
+  .contact .heading {
+    font-size: 36px; /* Reset font size */
+  }
+
+  .contact-form-btn {
+    font-size: 18px; /* Reset font size */
+  }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 480px) {
+  .nav__links {
+    display: flex; /* Ensure navigation links are displayed */
+    flex-direction: column; /* Stack navigation links vertically */
+    align-items: center; /* Center align navigation links */
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .nav__links li {
+    margin: 10px 0; /* Adjust spacing between nav links */
+  }
+
+  .cta {
+    display: block; /* Ensure call to action button is displayed */
+    margin-top: 20px; /* Adjust margin */
+  }
 }
